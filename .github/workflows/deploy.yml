@@ -1,0 +1,53 @@
+name: Build PDF & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Korean fonts
+        run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
+
+      - name: Prepare site
+        run: |
+          mkdir -p _site
+          cp index.html style.css _site/
+          if [ -d assets ]; then cp -r assets _site/; fi
+
+      - name: Generate resume.pdf
+        run: |
+          google-chrome --headless=new --no-sandbox --disable-gpu \
+            --no-pdf-header-footer \
+            --virtual-time-budget=10000 \
+            --print-to-pdf="$PWD/_site/resume.pdf" \
+            "file://$PWD/_site/index.html"
+          ls -lh _site/resume.pdf
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

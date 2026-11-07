@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>민경준 · iOS Developer</title>
+  <meta name="description" content="4년 9개월 차 iOS 개발자 민경준의 이력서">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="resume">
+
+    <!-- ===== 인적사항 ===== -->
+    <header class="header">
+      <div>
+        <h1 class="name">민경준</h1>
+        <p class="role">iOS Developer</p>
+      </div>
+      <ul class="contact">
+        <li><a href="mailto:minios.flow@gmail.com">minios.flow@gmail.com</a></li>
+        <li><a href="https://github.com/minios-x-x">github.com/minios-x-x</a></li>
+        <li><a href="https://velog.io/@jxxnnee">velog.io/@jxxnnee</a></li>
+      </ul>
+      <a class="pdf-button" href="resume.pdf" download>PDF 다운로드</a>
+    </header>
+
+    <!-- ===== 소개 ===== -->
+    <section class="intro">
+      <h2>소개</h2>
+      <p>
+        4년 9개월 차 iOS 개발자입니다. 헬스케어 서비스의 환자용·약사용 앱 두 개를 iOS 1인 개발자로 전담하며,
+        Storyboard 기반 앱을 새 디자인과 함께 코드 기반 MVVM 구조로 처음부터 다시 만들었고, 이후 SwiftUI 전환을 주도했습니다.
+      </p>
+      <p>
+        처음 다루는 문제는 레퍼런스와 오픈소스 코드를 직접 조사해 풀어가는 편입니다. 첫 회사에서 채팅 UI를 조사하며 직접 구현한 경험이
+        다음 회사에서 Sendbird UIKit을 걷어내고 채팅 화면을 자체 구현하는 결정으로 이어졌습니다.
+      </p>
+      <p>
+        최근에는 TCA(The Composable Architecture)를 개인 프로젝트로 학습하며 과정을 블로그에 기록하고 있고,
+        Claude Code 같은 AI 코딩 도구를 실제 구현에 적극적으로 활용하고 있습니다.
+      </p>
+    </section>
+
+    <!-- ===== 경력 ===== -->
+    <section>
+      <h2>경력 <span class="h2-sub">4년 9개월</span></h2>
+
+      <!-- 헬스포트 -->
+      <article class="item">
+        <div class="item-head">
+          <h3>헬스포트 <span class="sub">iOS 개발자 · 정규직</span></h3>
+          <span class="period">2024.02 – 2026.03 · 2년 2개월</span>
+        </div>
+        <p class="desc">
+          약사와 환자의 소통을 돕는 헬스케어 서비스 <b>굿팜</b>의 환자용 「모바일약국」과 약사용 「약사님용」 앱을
+          설계부터 배포·운영까지 전담했습니다. 디자이너와는 Figma 댓글로 구현 방식을 논의하고, 백엔드와는 데이터 스펙을 함께 조율했습니다.
+        </p>
+        <ul class="facts">
+          <li>iOS 1인 개발자로 앱 2개 전담</li>
+          <li>업데이트 약 40회 배포</li>
+          <li>SwiftUI 전환율 82% · 58%</li>
+        </ul>
+        <p class="stack">Swift · UIKit · SwiftUI · MVVM · RxSwift · Combine · Swift Concurrency · Moya · SnapKit · Sendbird</p>
+        <p class="links">
+          <a href="https://apps.apple.com/kr/app/id1616970174">모바일약국 App Store</a> ·
+          <a href="https://apps.apple.com/kr/app/id6447938758">약사님용 App Store</a>
+        </p>
+
+        <div class="topic">
+          <h4>새 디자인에 맞춰 두 앱을 처음부터 재구축 (모바일약국 3.0 · 약사님용 2.0)</h4>
+          <p class="why">앱 전체 디자인이 새로 바뀌는 시점에 Storyboard 구조로는 대응이 어렵다고 판단해, 기존 프로젝트를 고치는 대신 새 프로젝트로 다시 만들기로 결정.</p>
+          <ul>
+            <li>Storyboard를 걷어내고 코드 기반 UI와 MVVM 아키텍처로 새 프로젝트를 구성해 메이저 버전으로 출시</li>
+            <li>DEBUG·RELEASE 타깃을 분리해 개발과 운영 환경을 나눠 관리하는 기반 마련</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <h4>SwiftUI 단계적 전환</h4>
+          <p class="why">Apple의 SwiftUI 중심 흐름에 대비해 지금부터 전환 경험을 쌓아야 한다고 판단해 자발적으로 진행.</p>
+          <ul>
+            <li>신규 화면은 SwiftUI로 개발하고, 기존 화면은 영향도가 낮은 순서로 바꾸는 우선순위 전략 수립</li>
+            <li>UIHostingController 기반 BaseView·BaseViewController로 UIKit과 SwiftUI가 공존하는 하이브리드 구조 설계</li>
+            <li>전체 화면의 82%(모바일약국), 58%(약사님용)를 SwiftUI로 전환</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <h4>채팅 화면 자체 구현</h4>
+          <p class="why">Sendbird UIKit의 기본 화면으로는 약사 업무에 맞는 UI를 만들기 어려웠고, 이전 회사에서 채팅 UI를 직접 구현해 본 경험이 있어 자체 구현으로 결정.</p>
+          <ul>
+            <li>Sendbird UIKit 기반 채팅 화면을 걷어내고 UICollectionView로 다시 구현해, 업무에 맞는 UI를 자유롭게 바꿀 수 있는 구조 확보</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <h4>네트워크 계층 개선</h4>
+          <p class="why">비즈니스 로직이 네트워크 코드에 직접 의존하면 테스트가 어렵다고 판단해 구조를 바꿈.</p>
+          <ul>
+            <li>프로토콜 기반 Worker로 의존성을 주입하도록 바꿔, Mock 객체로 단위 테스트를 할 수 있는 구조 확보</li>
+            <li>RxSwift(Input/Output) 기반 네트워크 코드를 Swift Concurrency(async/await)로 다시 작성해 비동기 흐름의 가독성 개선</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <h4>결제·처방전 데이터 암호화</h4>
+          <p class="why">카드 정보와 처방전 이미지 같은 민감 데이터를 안전하게 전송해야 해서 표준 암호화 방식을 적용.</p>
+          <ul>
+            <li>카드 정보는 RSA, 처방전 이미지는 AES-GCM으로 암호화하는 로직을 <code>Cryptable</code> 프로토콜로 추상화해 앱 전반에서 같은 방식으로 사용하도록 모듈화</li>
+            <li>이미지 암호화는 처음 다루는 영역이라 직접 조사해 AES-GCM 방식을 선정</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <h4>재사용 UI 컴포넌트</h4>
+          <p class="why">반복되는 UI를 화면마다 새로 만들면 공수가 계속 늘어난다고 판단해 공통 컴포넌트로 정리.</p>
+          <ul>
+            <li>디자인팀이 Figma에 정의한 규격을 그대로 옮긴 EmptyStateView 등 공통 컴포넌트를 만들어, 화면마다 따로 구현하던 작업을 없앰</li>
+            <li>이전 프로젝트에서 쓰던 오픈소스 SegementSlide를 private fork로 관리하며 사내 공용 모듈로 발전시키도록 설계</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <h4>품질·안정성 관리</h4>
+          <p class="why">운영 중인 서비스에서 배포 후 발견되는 문제는 사용자 신뢰에 바로 영향을 준다고 판단해 배포 전 검증 과정을 직접 마련.</p>
+          <ul>
+            <li>정식 배포 전 TestFlight 베타 배포와 사내 테스트로 회귀 이슈를 미리 발견해 수정</li>
+            <li>Instruments로 화면을 닫은 뒤에도 해제되지 않는 메모리 누수를 찾아, 원인인 순환 참조를 weak self로 해결</li>
+            <li>CS·QA로 들어온 이슈를 직접 재현해 원인을 분석하고, CS팀에 공유한 뒤 빠르게 수정 배포</li>
+            <li>iOS 26 Liquid Glass 디자인에 맞춰 TabBar 등 UI 대응</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 마지막삼십분 -->
+      <article class="item">
+        <div class="item-head">
+          <h3>마지막삼십분 <span class="sub">iOS 개발자 · 정규직</span></h3>
+          <span class="period">2023.01 – 2023.08 · 8개월</span>
+        </div>
+        <p class="desc">주차 대행 B2B 플랫폼 <b>잇차 링커</b>의 기존 기능 개선과 배포를 담당했습니다. 시니어 iOS 개발자의 PR 리뷰를 거쳐 병합하는 방식으로 협업했습니다.</p>
+        <p class="stack">Swift · UIKit · MVVM · RxSwift · SnapKit · Moya</p>
+        <ul>
+          <li>Alert와 BottomSheet로 나뉘어 있던 코드를 하나의 AlertView로 통합</li>
+          <li>여러 개로 나뉘어 있던 Card 형태의 UITableViewCell을 하나로 합치고, 조건별 레이아웃 차이는 Factory Pattern으로 처리</li>
+          <li>UserDefaults 접근을 PropertyWrapper로 정리하고, Moya 사용을 간편하게 하는 EndPoint·AnyType 공통 유틸리티 추가</li>
+        </ul>
+      </article>
+
+      <!-- 넛지스트 -->
+      <article class="item">
+        <div class="item-head">
+          <h3>넛지스트 <span class="sub">iOS 개발자 · 정규직</span></h3>
+          <span class="period">2020.10 – 2022.08 · 1년 11개월</span>
+        </div>
+        <p class="desc">
+          교육·취미·자기계발 분야의 1:1 화상 클래스 플랫폼 <b>Lessoning</b>의 iOS 앱을 개발했습니다.
+          서버, 안드로이드, iOS 개발자 3명인 팀에서 iOS를 혼자 맡아 설계부터 App Store 출시, 유지보수까지 담당했습니다. (현재 서비스 종료)
+        </p>
+        <p class="stack">Swift · UIKit · ReactorKit · RxSwift · SnapKit · GRDB · HaishinKit</p>
+
+        <div class="topic">
+          <h4>채팅 화면 구현</h4>
+          <p class="why">채팅 UI를 처음 다루는 상황이라, 다른 회사들의 구현 사례를 조사하는 것부터 시작.</p>
+          <ul>
+            <li>LINE 엔지니어링 블로그와 Sendbird의 메시지 셀 구조를 참고해 UICollectionViewFlowLayout 기반 채팅 화면 구현</li>
+            <li>채팅 메시지를 GRDB로 로컬 DB에 저장</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <h4>화상 수업과 결제</h4>
+          <ul>
+            <li>1:1 화상 클래스를 위해 HaishinKit 라이브러리를 도입해 RTMP 스트리밍 구현</li>
+            <li>토스페이먼츠 PG 결제를 앱에 연동</li>
+          </ul>
+        </div>
+
+        <div class="topic">
+          <h4>공통 UI 컴포넌트</h4>
+          <ul>
+            <li>Calendar, PhotoPicker, ImageDetailView, ExpandableTableView, TimePicker 등 핵심 기능에 필요한 컴포넌트를 직접 구현</li>
+            <li>요구사항에 맞지 않는 외부 라이브러리는 UI 코드를 직접 수정해 사용</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== 기술 ===== -->
+    <section>
+      <h2>기술</h2>
+      <dl class="skills">
+        <dt>Language</dt><dd>Swift</dd>
+        <dt>UI</dt><dd>SwiftUI, UIKit (코드 기반), SnapKit</dd>
+        <dt>Architecture</dt><dd>MVVM (Input/Output), ReactorKit, TCA (학습 중)</dd>
+        <dt>비동기</dt><dd>Swift Concurrency, Combine, RxSwift</dd>
+        <dt>Network · Data</dt><dd>Moya, GRDB, RSA · AES-GCM 암호화</dd>
+        <dt>SDK 연동</dt><dd>Sendbird, 토스페이먼츠, HaishinKit (RTMP)</dd>
+        <dt>Tools</dt><dd>Xcode Instruments, TestFlight, Firebase Crashlytics, Git, Figma, Claude Code</dd>
+      </dl>
+    </section>
+
+    <!-- ===== 학습 · 활동 ===== -->
+    <section>
+      <h2>학습 · 활동</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <h3>Weather-TCA <span class="sub">TCA 학습 프로젝트</span></h3>
+          <span class="period">2026.08 – 진행 중</span>
+        </div>
+        <ul>
+          <li>Root 리듀서에서 Scope·ifLet으로 Splash·Main Feature를 조합해 화면 전환 상태 관리</li>
+          <li>WeatherAdapter를 DependencyKey로 분리해 실제 네트워크 호출(liveValue)과 프리뷰용 Mock(previewValue) 구분</li>
+          <li>TestStore로 날씨 조회 성공·실패와 화면 전환 로직 테스트</li>
+          <li>개념, 내부 동작, Dependency, 테스트, 트러블슈팅까지 학습 과정을 velog 시리즈로 기록</li>
+        </ul>
+        <p class="links">
+          <a href="https://github.com/minios-x-x/Weather-TCA">GitHub</a> ·
+          <a href="https://velog.io/@jxxnnee/series/SwiftUI-TCA-Study">velog 시리즈</a>
+        </p>
+      </article>
+
+      <ul class="plain">
+        <li>iO3S 스터디 (2019~) · 6~8명이 매주 Swift 주제를 발표하는 스터디 · <a href="https://io3s.github.io/">공동 기술 블로그</a></li>
+        <li>Programmers 알고리즘 문제 Swift 풀이 기록 · <a href="https://github.com/jxxnnee/Programmers-Algorithm">GitHub</a></li>
+      </ul>
+    </section>
+
+    <!-- ===== 학력 ===== -->
+    <section>
+      <h2>학력</h2>
+      <article class="item">
+        <div class="item-head">
+          <h3>인덕대학교 <span class="sub">컴퓨터소프트웨어학과 학사 (전공심화과정, 야간)</span></h3>
+          <span class="period">2020.03 – 2021.02</span>
+        </div>
+      </article>
+      <article class="item">
+        <div class="item-head">
+          <h3>인덕대학교 <span class="sub">컴퓨터소프트웨어학과 전문학사</span></h3>
+          <span class="period">2013.03 – 2020.02</span>
+        </div>
+      </article>
+    </section>
+
+  </main>
+</body>
+</html>
