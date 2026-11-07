@@ -142,6 +142,17 @@ code {
   background: var(--bg);
 }
 
+/* 웹에서만 보이는 "더 보기" (PDF에서는 숨김) */
+.more { margin-top: 14px; font-size: 14px; }
+.more summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13.5px;
+}
+.more ul { margin: 6px 0 0; padding-left: 18px; }
+.more li { margin: 2px 0; }
+
 .plain { margin: 12px 0 0; padding-left: 18px; font-size: 14px; }
 .plain li { margin: 2px 0; }
 
@@ -173,7 +184,7 @@ code {
 @media print {
   body { background: #fff; font-size: 10.5pt; line-height: 1.5; }
   .resume { max-width: none; margin: 0; padding: 0; border-radius: 0; box-shadow: none; }
-  .pdf-button { display: none; }
+  .pdf-button, .more { display: none; }
   .header { grid-template-columns: 1fr auto; }
   .contact { text-align: right; }
   .item-head { flex-direction: row; }
